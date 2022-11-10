@@ -8,4 +8,7 @@ Annotated tags, however, are stored as full objects in the Git database. They’
 
 The -m specifies a tagging message stored with the tag. If you don’t specify a message for an annotated tag, Git launches your editor so you can type it in.
 
-In the “detached HEAD” state, if you make changes and then create a commit, the tag will stay the same, but your new commit won’t belong to any branch and will be unreachable, except by the exact commit hash.
+In the “detached HEAD” state, if you make changes and then create a commit, 
+
+
+the tag will stay the same, but your new commit won’t belong to any branch and will be unreachable, except by the exact commit hash.
