@@ -38,7 +38,7 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
 
-    if(initial commit) git tag latest steps.shortsha.outputs.shortsha
+    #if(initial commit) git tag latest steps.shortsha.outputs.shortsha
     steps: 
       - name: multiline script 
         run: |
