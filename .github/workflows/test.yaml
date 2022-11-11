@@ -37,8 +37,6 @@ jobs:
         run: echo "The git sha(short) is ${{ steps.shortsha.outputs.shortsha }}"
   run-shell-command:
     runs-on: ubuntu-latest
-
-    #if(initial commit) git tag latest steps.shortsha.outputs.shortsha
     steps: 
       - name: multiline script 
         run: |
@@ -46,11 +44,8 @@ jobs:
           #extract commit id for 2latest
            git rev-parse secondLatest 
            git tag -d secondLatest
-          
            git tag thirdLatest steps.shortsha.outputs.shortsha(from46) #create new tag as thirdLatest
-
            git rev-parse latest #extract commit id for latest
            git tag -d latest
            git tag secondLatest steps.shortsha.outputs.shortsha(from50) #create new tag as 2Latest
-
            git tag latest master
