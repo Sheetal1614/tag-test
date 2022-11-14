@@ -47,3 +47,4 @@ jobs:
            git tag -d latest
            git tag secondLatest ${{ steps.shortsha.outputs.shortsha }}
            git tag latest master
+           git push --tags
