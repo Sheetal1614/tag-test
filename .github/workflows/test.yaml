@@ -42,8 +42,8 @@ jobs:
            git tag -d thirdLatest
            git rev-parse secondLatest 
            git tag -d secondLatest
-           git tag thirdLatest steps.shortsha.outputs.shortsha #create new tag as thirdLatest
+           git tag thirdLatest ${{ steps.shortsha.outputs.shortsha }}
            git rev-parse latest
            git tag -d latest
-           git tag secondLatest steps.shortsha.outputs.shortsha #create new tag as 2Latest
+           git tag secondLatest ${{ steps.shortsha.outputs.shortsha }}
            git tag latest master
