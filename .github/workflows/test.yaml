@@ -27,6 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           ref: ${{ github.event.inputs.tag }}
 
       - name: Generate git sha(short)
@@ -35,7 +36,7 @@ jobs:
 
       - name: Print git sha(short)
         run: echo "The git sha(short) is ${{ steps.shortsha.outputs.shortsha }}"
-        
+
       - name: multiline script 
         run: |
            git tag -d thirdLatest
