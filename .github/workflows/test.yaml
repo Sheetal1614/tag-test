@@ -40,11 +40,11 @@ jobs:
       - name: multiline script 
         run: |
            git tag -d thirdLatest
-           git rev-parse secondLatest 
+           export GIT_TAG="$(git rev-parse secondLatest)"
            git tag -d secondLatest
-           git tag thirdLatest ${{ steps.shortsha.outputs.shortsha }}
-           git rev-parse latest
+           git tag thirdLatest GIT_TAG
+           export GIT_TAG="$(git rev-parse latest)"
            git tag -d latest
-           git tag secondLatest ${{ steps.shortsha.outputs.shortsha }}
-           git tag latest master
+           git tag secondLatest GIT_TAG
+           git tag latest ${{ steps.shortsha.outputs.shortsha }}
            git push --tags
